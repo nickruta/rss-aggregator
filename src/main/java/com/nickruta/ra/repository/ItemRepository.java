@@ -1,0 +1,15 @@
+package com.nickruta.ra.repository;
+
+import java.util.List;
+
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.nickruta.ra.entity.Blog;
+import com.nickruta.ra.entity.Item;
+
+public interface ItemRepository extends JpaRepository<Item, Integer> {
+	
+	List<Item> findByBlog(Blog blog, Pageable pageable);
+
+}
