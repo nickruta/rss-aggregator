@@ -7,6 +7,8 @@
 
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
+<link rel="stylesheet" href="/resources/css/main.css">
+
 <!--  Twitter Bootstrap CDN Import -->
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -49,6 +51,7 @@
               <li class="${current == 'index' ? 'active' : '' }"><a href='<spring:url value="/" />'>Home</a></li>
               <li class="${current == 'users' ? 'active' : '' }"><a href="<spring:url value="/users.html" />">Users</a></li>
               <li class="${current == 'user-register' ? 'active' : '' }"><a href="<spring:url value="/register.html" />">Register</a></li>
+              <li class="${current == 'login' ? 'active' : '' }"><a href="<spring:url value="/login.html" />">Login</a></li>
                    
             </ul>
           </div><!--/.nav-collapse -->
