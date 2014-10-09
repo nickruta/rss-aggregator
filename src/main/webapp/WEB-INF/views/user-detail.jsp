@@ -46,8 +46,26 @@
 </div>
 </form:form>
 
-<c:forEach items="${user.blogs}" var="blog">
+<br>
+<br>
 
+<script>
+	$(document).ready(function() {
+		$('.nav-tabs a:first').tab('show'); //Select first tab
+	});
+</script>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+	<c:forEach items="${user.blogs}" var="blog">
+		<li><a href="#blog_${blog.id}" data-toggle="tab">${blog.name}</a></li>
+	</c:forEach>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<c:forEach items="${user.blogs}" var="blog">
+		<div class="tab-pane" id="blog_${blog.id}">	
 	<h1>${blog.name}</h1>
 	<p>${blog.url}</p>
 
@@ -67,5 +85,6 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	
-</c:forEach>
+		</div>
+	</c:forEach>
+</div>
