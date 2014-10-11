@@ -62,20 +62,21 @@ public class InitDbService {
 			blogJavavids.setUrl("http://feeds.feedburner.com/javavids?format=xml");
 			blogJavavids.setUser(userAdmin);
 			blogRepository.save(blogJavavids);
-			
-			Item item1 = new Item();
-			item1.setBlog(blogJavavids);
-			item1.setTitle("first");
-			item1.setLink("http://www.javavids.com");
-			item1.setPublishedDate(new Date());
-			itemRepository.save(item1);
-			
-			Item item2 = new Item();
-			item2.setBlog(blogJavavids);
-			item2.setTitle("second");
-			item2.setLink("http://www.javavids.com");
-			item2.setPublishedDate(new Date());	
-			itemRepository.save(item2);
+
+			// two test items
+//			Item item1 = new Item();
+//			item1.setBlog(blogJavavids);
+//			item1.setTitle("first");
+//			item1.setLink("http://www.javavids.com");
+//			item1.setPublishedDate(new Date());
+//			itemRepository.save(item1);
+//			
+//			Item item2 = new Item();
+//			item2.setBlog(blogJavavids);
+//			item2.setTitle("second");
+//			item2.setLink("http://www.javavids.com");
+//			item2.setPublishedDate(new Date());	
+//			itemRepository.save(item2);
 			
 		}			
 }
