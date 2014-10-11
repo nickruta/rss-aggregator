@@ -1,7 +1,6 @@
 package com.nickruta.ra.service;
 
 import java.io.File;
-import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
