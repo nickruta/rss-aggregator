@@ -1,6 +1,7 @@
 package com.nickruta.ra.entity;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,7 +10,10 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Size;
 
+import org.hibernate.type.TrueFalseType;
 import org.hibernate.validator.constraints.Email;
+
+import com.nickruta.ra.annotation.UniqueUsername;
 
 import java.util.List;
 
@@ -21,6 +25,8 @@ public class User {
 	private Integer id;
 	
 	@Size(min=3, message="Name must be at least 3 characters long!")
+	@Column(unique= true)
+	@UniqueUsername(message="This username already exists!")
 	private String name; 
 	
 	@Size(min=1, message="Invalid email address!")
