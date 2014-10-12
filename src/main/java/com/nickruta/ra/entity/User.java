@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 import org.hibernate.type.TrueFalseType;
@@ -18,6 +19,7 @@ import com.nickruta.ra.annotation.UniqueUsername;
 import java.util.List;
 
 @Entity
+@Table(name = "app_user")
 public class User {
 	
 	@Id

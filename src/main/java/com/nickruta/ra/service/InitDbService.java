@@ -1,7 +1,6 @@
 package com.nickruta.ra.service;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -12,7 +11,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.nickruta.ra.entity.Blog;
-import com.nickruta.ra.entity.Item;
 import com.nickruta.ra.entity.Role;
 import com.nickruta.ra.entity.User;
 import com.nickruta.ra.repository.BlogRepository;
@@ -38,6 +36,8 @@ public class InitDbService {
 		
 		@PostConstruct
 		public void init() {
+			if(roleRepository.findByName("ROLE_ADMIN")== null) {
+				
 			Role roleUser = new Role();
 			roleUser.setName("ROLE_USER");
 			roleRepository.save(roleUser);
@@ -77,6 +77,6 @@ public class InitDbService {
 //			item2.setLink("http://www.javavids.com");
 //			item2.setPublishedDate(new Date());	
 //			itemRepository.save(item2);
-			
+			}
 		}			
 }
